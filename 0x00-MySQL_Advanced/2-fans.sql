@@ -6,6 +6,7 @@
 -- 	Column names must be: origin and nb_fans
 -- 	Your script can be executed on any database
 -- Context: Calculate/compute something is always power intensive… better to distribute the load!
-SELECT origin, fans AS nb_fans
+SELECT origin, sum(fans) AS nb_fans
 FROM metal_bands
-ORDER BY fans DESC
+GROUP BY origin
+ORDER BY nb_fans DESC;
