@@ -62,7 +62,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 ## More Info
 
 Install MongoDB 4.2 in Ubuntu 18.04
-[Official installation guide](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
+- [Official installation guide](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ```bash
 $ wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
