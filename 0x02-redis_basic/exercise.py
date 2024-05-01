@@ -6,7 +6,7 @@ Module contains Cache class
 
 import redis
 import uuid
-from typing import Union
+from typing import Union, Callable, Any
 
 
 class Cache:
@@ -19,8 +19,8 @@ class Cache:
         creates a new redis cache object
         that would be used to read and write to redis store
         """
-        self._redis = redis.Redis()
-        self._redis.flushdb()
+        self.__redis = redis.Redis()
+        self.__redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """
@@ -28,5 +28,20 @@ class Cache:
         returns string key to that data
         """
         redis_key = str(uuid.uuid4())
-        self._redis.set(redis_key, data)
+        self.__redis.set(redis_key, data)
         return redis_key
+    
+    def get(self, key:str, fn:Callable = None) -> Any:
+        """
+        Method to get data stored in a given key
+        """
+        if (self.__redis.get(key) == None):
+            return None
+        data = self.__redis(key)
+        return fn(data)
+    
+    def get_str(self, key: str) -> str:
+        """
+        method to process getting strings from redis
+        """
+        self.get(key, lambda x: self.__redis)
