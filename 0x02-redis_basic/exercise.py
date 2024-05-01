@@ -15,10 +15,7 @@ class Cache:
     """
 
     def __init__(self) -> None:
-        """
-        creates a new redis cache object
-        that would be used to read and write to redis store
-        """
+        """hellow"""
         self._redis = redis.Redis()
         self._redis.flushdb()
 
