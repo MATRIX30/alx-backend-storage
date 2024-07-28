@@ -1,2 +1,4 @@
-// Use or create a MongoDB database.
-use my_db;
+// script to create a databse my_db in MongoDB
+// db.my_db - this command creates the database my_db but 
+// we can bypass that by just typing use my_db
+use my_db
