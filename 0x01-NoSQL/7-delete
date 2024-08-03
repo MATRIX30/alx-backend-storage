@@ -1,3 +1,4 @@
-// Deletes all documents with name="Holberton school" in the school collection.
-
-db.school.deleteMany({name: "Holberton school"});
+// script to delete all documents with a match in school collection
+db.school.deleteMany(
+    {name: "Holberton school"}
+)
