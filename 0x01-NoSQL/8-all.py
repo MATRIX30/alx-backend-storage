@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-'''Module with function that lists all documents in a collection
-'''
-
-
+""" script to list all dababased in mongodb"""
 def list_all(mongo_collection):
-    '''Function that lists all documents in a collection
-    '''
-    return [doc for doc in mongo_collection.find()]
+    """method to list all documents in a mongo collection"""
+    docs = mongo_collection.find()
+    return docs if docs else []
