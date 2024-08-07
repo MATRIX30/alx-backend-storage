@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-'''Module.
-'''
+""" module to update data in mongodb"""
 
 
 def update_topics(mongo_collection, name, topics):
-    '''Function that changes all topics of a collection's document based on
-        the name.
-    '''
+    """method to update topic
+
+    Args:
+        mongo_collection (collection): mongodb collection
+        name (str): the name of the school to update
+        topics (list): list of topics to update
+    """
     mongo_collection.update_many(
-        {'name': name},
-        {'$set': {'topics': topics}}
+        {"name": name},
+        {"$set": {"topics": topics}}
     )
