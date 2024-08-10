@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
-'''Module.
-'''
+"""module to return schools with specific topics"""
 
 
 def schools_by_topic(mongo_collection, topic):
-    '''Function that returns the list of school having a specific topic.
-    '''
-    topic_filter = {
-        'topics': {
-            '$elemMatch': {
-                '$eq': topic,
-            },
-        },
-    }
-    return [doc for doc in mongo_collection.find(topic_filter)]
+    """get schools by a specific topic"""
+    return [mongo_collection.find({"topic": })]
