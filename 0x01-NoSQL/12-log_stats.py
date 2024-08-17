@@ -2,3 +2,4 @@
 
 
 """provides stats of nginx server stored in MongoDB"""
+def 
